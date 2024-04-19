@@ -1,0 +1,42 @@
+Představte si, že vyvíjíte aplikaci pro správu knihovny. Každá kniha má název, autora/autory, rok vydání 
+a stav dostupnosti (k dispozici / vypůjčeno). Existují dva typy knih:
+
+a) Romány – mají navíc parametr žánr (existuje celkem 5 různých žánrů). 
+b) Učebnice – obsahují informaci pro jaký ročník jsou vhodné. 
+
+Vytvořte v programovacím jazyce Java ve vývojovém prostředí Eclipse program, který umožní uživateli 
+následující funkce: 
+
+a) Přidání nové knihy – uživatel vybere typ knihy a zadá všechny její dostupné parametry. //done
+
+b) Úprava knihy – uživatel vybere knihu podle názvu a může provést úpravu autora/autorů, roku vydání //done
+nebo stavu dostupnosti. 
+
+c) Smazání knihy – uživatel vybere knihu podle názvu a smaže ji ze seznamu. //done
+
+d) Označení knihy jako vypůjčené/vrácené – uživatel označí knihu jako vypůjčenou nebo vrácenou, což 
+ovlivní stav dostupnosti. //?
+
+e) Výpis knih – uživatel může nechat vypsat všechny knihy v abecedním pořadí, přičemž se zobrazí 
+název, autoři, žánr/ročník dle typu knihy, rok vydání a stav dostupnosti. //done
+ 
+f) Vyhledání knihy – uživatel zadá název knihy a zobrazí se mu veškeré informace o ní. //done
+
+g) Výpis všech knih daného autora v chronologickém pořadí. //done
+
+h) Výpis všech knih, které patří do konkrétního žánru – uživatel zadá žánr a zobrazí se mu seznam knih //done
+patřících do tohoto žánru.
+ 
+i) Výpis všech vypůjčených knih s informací jestli se jedná o učebnici či román. //done
+
+i) Uložení informace o vybrané knize (dle jejího názvu) do souboru. //done
+
+j) Načtení všech informací o dané knize ze souboru (soubor obsahuje vždy jednu knihu) //done
+
+
+
+k) Při ukončení programu se uloží veškeré informace do SQL databáze. 
+
+l) Při spuštění programu se veškeré informace načtou z SQL databáze. 
+
+Pozn. SQL databáze bude využívána pouze při spuštění a ukončení programu.
