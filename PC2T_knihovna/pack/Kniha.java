@@ -60,11 +60,7 @@ public abstract class Kniha implements Comparable<Kniha> {
 
 	@Override
 	public int compareTo(Kniha kniha) {
-		if (this.getNazev().compareTo(kniha.getNazev()) == -1)
-			return -1;
-		if (this.getNazev().compareTo(kniha.getNazev()) == 1)
-			return 1;
-		return 0;
+		return this.getNazev().compareTo(kniha.getNazev());
 	}
 
 	public abstract String vypisKnihu();

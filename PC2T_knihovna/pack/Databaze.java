@@ -34,7 +34,7 @@ public class Databaze {
 		}
 		String nazev = "";
 		String autor = "";
-		int rokVydani = 0;
+		int rokVydani = -2147483648;
 		String stav = "";
 		String vhodnost = "";
 		String zanr = "";
@@ -47,7 +47,7 @@ public class Databaze {
 				System.out.println("Zadejte autora teto ucebnice");
 				autor = sc.nextLine();
 			}
-			while (rokVydani == 0) {
+			while (rokVydani == -2147483648) {
 				System.out.println("Zadejte rok vydani teto ucebnice");
 				if (sc.hasNextInt()) {
 					rokVydani = sc.nextInt();
@@ -72,7 +72,7 @@ public class Databaze {
 				System.out.println("Zadejte autora tohoto romanu");
 				autor = sc.nextLine();
 			}
-			while (rokVydani == 0) {
+			while (rokVydani == -2147483648) {
 				System.out.println("Zadejte rok vydani tohoto romanu");
 				if (sc.hasNextInt()) {
 					rokVydani = sc.nextInt();
@@ -135,7 +135,7 @@ public class Databaze {
 			Kniha kniha = prvkyDatabaze.get(nazev);
 			boolean run = true;
 			int volba = 0;
-			int rok = 0;
+			int rok = -2147483648;
 			String autor = "";
 			while (run) {
 				System.out.println("Vyberte pozadovanou cinnost:");
@@ -157,7 +157,7 @@ public class Databaze {
 					System.out.println("Autor uspesne zmenen");
 					break;
 				case 2:
-					while (rok == 0) {
+					while (rok == -2147483648) {
 						System.out.println("Zadejte novy rok vydani");
 						if (sc.hasNextInt()) {
 							rok = sc.nextInt();
@@ -233,7 +233,7 @@ public class Databaze {
 		String typ = "";
 		String nazev = "";
 		String autor = "";
-		int rokVydani = 0;
+		int rokVydani = -2147483648;
 		String stav = "";
 		String vhodnostORzanr = "";
 		String path = "";
@@ -336,7 +336,11 @@ public class Databaze {
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "Nastala chyba pri cteni ze souboru\n";
-		}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		return "Radek neobsahuje pozadovanou hodnotu(nema ':')\n";
+	}
+		
 	}
 
 	public String exportSQL() {
@@ -381,7 +385,7 @@ public class Databaze {
 		String typ = "";
 		String nazev = "";
 		String autor = "";
-		int rokVydani = 0;
+		int rokVydani = -2147483648;
 		String stav = "";
 		String vhodnostORzanr = "";
 		try {
@@ -414,7 +418,7 @@ public class Databaze {
 			}
 			return "\n";
 		} else {
-			return "Databaze je doposud prazdna\\n";
+			return "Databaze je doposud prazdna\n";
 		}
 	}
 
@@ -426,7 +430,7 @@ public class Databaze {
 				System.out.println("Zvolte autora");
 				autor = sc.nextLine();
 			}
-			System.out.println("Autor: \n");
+			System.out.println("Autor: "+ autor +"\n");
 			TreeSet<Kniha> podleData = new TreeSet<Kniha>(new PorovnaniVydani());
 			for (String kniha : knihy) {
 				if (prvkyDatabaze.get(kniha).getAutor().equals(autor)) {
@@ -439,10 +443,10 @@ public class Databaze {
 				}
 				return "\n";
 			} else {
-				return autor + " nema v databazi zadnou knihu\\n";
+				return autor + " nema v databazi zadnou knihu\n";
 			}
 		} else {
-			return "Databaze je doposud prazdna\\n";
+			return "Databaze je doposud prazdna\n";
 		}
 	}
 

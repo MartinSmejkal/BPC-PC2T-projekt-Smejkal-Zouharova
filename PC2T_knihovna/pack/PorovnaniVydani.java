@@ -14,6 +14,9 @@ public class PorovnaniVydani implements Comparator<Kniha> {
 		if (vydani1 > vydani2) {
 			return 1;
 		}
+		if(vydani1==vydani2) {
+			return kniha1.getNazev().compareTo(kniha2.getNazev());
+		}
 		return 0;
 
 	}
